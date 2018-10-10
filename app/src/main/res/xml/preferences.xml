@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/setting_category_language">
+
+        <Preference
+            android:key="@string/key_setting_locale"
+            android:summary="@string/subtitle_change_language"
+            android:title="@string/title_change_language" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
