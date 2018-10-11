@@ -2,6 +2,7 @@ package com.gamatechno.app.katalogpilem.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -15,6 +16,7 @@ import com.gamatechno.app.katalogpilem.utils.ApiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,10 +40,12 @@ public class SearchActivity extends AppCompatActivity {
 
         client = ApiUtils.getAPIService();
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         recyclerView = findViewById(R.id.search_recycler);
         movieAdapter = new MovieAdapter(getApplicationContext(), catalogueDataList);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(movieAdapter);
 
         searchData(keyword);
