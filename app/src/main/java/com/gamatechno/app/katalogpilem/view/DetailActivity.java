@@ -18,6 +18,8 @@ import com.bumptech.glide.Glide;
 import com.gamatechno.app.katalogpilem.R;
 import com.gamatechno.app.katalogpilem.database.DatabaseContract;
 
+import java.util.Objects;
+
 import static com.gamatechno.app.katalogpilem.database.DatabaseContract.FavoriteColumns.CONTENT_URI;
 
 public class DetailActivity extends AppCompatActivity {
@@ -62,7 +64,7 @@ public class DetailActivity extends AppCompatActivity {
                 .load("http://image.tmdb.org/t/p/w185" + backdropPath)
                 .into(ivPoster);
 
-        toolbar.setTitle(title);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(title);
 
         tvDate.setText(releaseDate);
         tvDeskripsi.setText(overview);

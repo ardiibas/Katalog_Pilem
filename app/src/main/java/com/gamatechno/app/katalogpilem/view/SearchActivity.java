@@ -38,6 +38,8 @@ public class SearchActivity extends AppCompatActivity {
 
         String keyword = getIntent().getStringExtra("keyword");
 
+        Objects.requireNonNull(getSupportActionBar()).setTitle(keyword);
+
         client = ApiUtils.getAPIService();
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
