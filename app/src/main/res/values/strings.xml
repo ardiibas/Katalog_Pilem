@@ -105,5 +105,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="loading">Please wait...</string>
+    <string name="add_to_favorite">Add to your favorite list</string>
+    <string name="remove_to_favorite">Remove from  your favorite list</string>
 
 </resources>

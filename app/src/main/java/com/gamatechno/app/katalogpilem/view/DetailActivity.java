@@ -98,7 +98,7 @@ public class DetailActivity extends AppCompatActivity {
             Uri uri = Uri.parse(CONTENT_URI + "/" + id);
             getContentResolver().delete(uri, null, null);
             fab.setImageResource(R.drawable.ic_fav_unchecked);
-            Snackbar.make(view, "Keluar pak Ekoooo", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, R.string.remove_to_favorite, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         } else {
             ContentValues values = new ContentValues();
@@ -111,7 +111,7 @@ public class DetailActivity extends AppCompatActivity {
             setResult(101);
 
             fab.setImageResource(R.drawable.ic_fav_checked);
-            Snackbar.make(view, "Masuk pak Ekoooo", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, R.string.add_to_favorite, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
     }

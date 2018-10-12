@@ -37,7 +37,7 @@ public class FavoriteFragment extends Fragment{
                 R.layout.fragment_favorite, container, false
         );
 
-        progressDialog = ProgressDialog.show(getContext(), null, "Please wait...", true, false);
+        progressDialog = ProgressDialog.show(getContext(), null, getString(R.string.loading), true, false);
 
         recyclerView = view.findViewById(R.id.fragment_favorite_recycler);
 

@@ -63,7 +63,7 @@ public class UpComingFragment extends Fragment {
     }
 
     private void refreshData() {
-        progressDialog = ProgressDialog.show(getContext(), null, "Please wait...", true, false);
+        progressDialog = ProgressDialog.show(getContext(), null, getString(R.string.loading), true, false);
 
         String api_key = "6cbbb575d03419c61482de70c8706aae";
         String language = "en-US";

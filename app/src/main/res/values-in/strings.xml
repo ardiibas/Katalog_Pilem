@@ -105,5 +105,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Pengaturan</string>
+    <string name="loading">Tunggu sebentar...</string>
+    <string name="add_to_favorite">Menambahkan ke list favorit anda</string>
+    <string name="remove_to_favorite">Menghapus dari list favorit anda</string>
 
 </resources>
