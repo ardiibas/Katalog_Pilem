@@ -108,5 +108,7 @@
     <string name="loading">Please wait...</string>
     <string name="add_to_favorite">Add to your favorite list</string>
     <string name="remove_to_favorite">Remove from  your favorite list</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 
 </resources>

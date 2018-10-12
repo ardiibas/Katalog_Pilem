@@ -23,6 +23,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     private Context context;
     private List<MovieCatalogueData> listMovies;
+    public final static String EXTRA_MOVIE = "movie";
 
     public MovieAdapter(Context context, List<MovieCatalogueData> listMovies) {
         this.context = context;

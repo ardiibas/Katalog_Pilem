@@ -9,6 +9,13 @@ public final class DatabaseContract {
     public static final String AUTHORITY = "com.gamatechno.app.katalogpilem";
     public static final String SCHEME = "content";
 
+    public static final String LINK_IMAGE = "http://image.tmdb.org/t/p/w185/";
+    public static final String LANGUAGE = "en-US";
+    public static final String INCLUDE_ADULTS = "false";
+    public static final String PAGE = "1";
+
+    public static final String API_KEY = "6cbbb575d03419c61482de70c8706aae";
+
     private DatabaseContract(){}
 
     public static final class FavoriteColumns implements BaseColumns {
