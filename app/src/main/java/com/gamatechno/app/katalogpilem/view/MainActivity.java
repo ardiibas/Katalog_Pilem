@@ -35,6 +35,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         tabLayout.setupWithViewPager(viewPager);
 
         setupTab();
+
+        if(savedInstanceState == null){
+            viewPager.setCurrentItem(0);
+        } else {
+            viewPager.setCurrentItem(viewPager.getCurrentItem());
+        }
     }
 
     private void setupTab() {

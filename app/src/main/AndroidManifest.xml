@@ -7,6 +7,7 @@
     <permission
         android:name="com.gamatechno.app.katalogpilem.READ_DATABASE"
         android:protectionLevel="normal" />
+
     <permission
         android:name="com.gamatechno.app.katalogpilem.WRITE_DATABASE"
         android:protectionLevel="normal" />
@@ -18,6 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <provider
             android:name=".utils.FavoriteProvider"
             android:authorities="com.gamatechno.app.katalogpilem"
@@ -25,19 +27,27 @@
             android:readPermission="com.gamatechno.app.katalogpilem.READ_DATABASE"
             android:writePermission="com.gamatechno.app.katalogpilem.WRITE_DATABASE" />
 
-        <activity android:name=".view.MainActivity">
+        <activity
+            android:name=".view.MainActivity"
+            android:configChanges="orientation|screenSize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
         <activity
             android:name=".view.DetailActivity"
             android:label="@string/title_activity_detail"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".view.SearchActivity" />
-        <activity android:name=".view.SettingActivity"></activity>
+
+        <activity android:name=".view.SettingActivity" />
+
     </application>
 
 </manifest>
