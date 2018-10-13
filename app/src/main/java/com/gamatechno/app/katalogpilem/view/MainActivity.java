@@ -17,19 +17,29 @@ import com.gamatechno.app.katalogpilem.adapter.ViewPagerAdapter;
 import com.gamatechno.app.katalogpilem.fragment.FavoriteFragment;
 import com.gamatechno.app.katalogpilem.fragment.NowPlayingFragment;
 import com.gamatechno.app.katalogpilem.fragment.UpComingFragment;
+import com.gamatechno.app.katalogpilem.utils.NotifReciver;
+import com.gamatechno.app.katalogpilem.utils.NotifTask;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private TabLayout tabLayout;
-    private ViewPager viewPager;
+
+    private NotifReciver notifReciver = new NotifReciver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        NotifTask notifTask = new NotifTask(getApplication());
+        notifTask.createPeriodicTask();
+
+        notifReciver.setRepeatingAlarm(getApplication(), NotifReciver.TYPE_REPEATING, "07:00", "Cek Aplikasi kita dong sis gan");
+
         tabLayout = findViewById(R.id.main_tabs);
-        viewPager = findViewById(R.id.main_viewpager);
+        ViewPager viewPager = findViewById(R.id.main_viewpager);
 
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
@@ -46,15 +56,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private void setupTab() {
         TextView tabSatu = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tabSatu.setText(getString(R.string.now_playing));
-        tabLayout.getTabAt(0).setCustomView(tabSatu);
+        Objects.requireNonNull(tabLayout.getTabAt(0)).setCustomView(tabSatu);
 
         TextView tabDua = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tabDua.setText(getString(R.string.upcoming));
-        tabLayout.getTabAt(1).setCustomView(tabDua);
+        Objects.requireNonNull(tabLayout.getTabAt(1)).setCustomView(tabDua);
 
         TextView tabTiga = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tabTiga.setText(getString(R.string.list_favorit));
-        tabLayout.getTabAt(2).setCustomView(tabTiga);
+        Objects.requireNonNull(tabLayout.getTabAt(2)).setCustomView(tabTiga);
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -86,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         }
         return true;
     }
-
 
     @Override
     public boolean onQueryTextSubmit(String query) {
